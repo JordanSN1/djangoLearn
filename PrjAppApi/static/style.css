@@ -1,0 +1,101 @@
+/* Style général de la page */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+
+/* Style pour les sections d'animes et de mangas */
+.anime-list, .manga-list {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Style de la liste des éléments */
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Style de chaque carte d'anime ou manga */
+li {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Image de la carte */
+li img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Titres et description */
+li h3 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+li p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.pagination a:hover {
+    text-decoration: underline;
+}
+
+.pagination span {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Style de la page d'erreur */
+p {
+    text-align: center;
+    color: #cc0000;
+    font-size: 16px;
+}

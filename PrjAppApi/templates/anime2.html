@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animes et Mangas</title>
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <h1>Liste des Animes et Mangas</h1>
+
+    <!-- Section des Animes -->
+    <div class="anime-list">
+        <h2>Animes</h2>
+        {% if anime_list %}
+            <ul>
+                {% for anime in anime_list %}
+                    <li>
+                        <img src="{{ anime.image_url }}" alt="{{ anime.title }}">
+                        <h3>{{ anime.title }}</h3>
+                        <p>{{ anime.description }}</p>
+                        <p>Popularité : {{ anime.popularityRank }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aucun anime trouvé.</p>
+        {% endif %}
+    </div>
+
+    <!-- Section des Mangas -->
+    <div class="manga-list">
+        <h2>Mangas</h2>
+        {% if manga_list %}
+            <ul>
+                {% for manga in manga_list %}
+                    <li>
+                        <img src="{{ manga.image_url }}" alt="{{ manga.title }}">
+                        <h3>{{ manga.title }}</h3>
+                        <p>{{ manga.description }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aucun manga trouvé.</p>
+        {% endif %}
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        {% if prev_page %}
+            <a href="?page={{ prev_page }}">Précédent</a>
+        {% endif %}
+        <span>Page {{ current_page }}</span>
+        {% if next_page %}
+            <a href="?page={{ next_page }}">Suivant</a>
+        {% endif %}
+    </div>
+
+</body>
+</html>
